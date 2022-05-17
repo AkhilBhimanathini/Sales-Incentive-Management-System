@@ -1,0 +1,24 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Classic Login Form Example</title>
+    <link href="https://fonts.googleapis.com/css?family=Assistant:400,700" rel="stylesheet">
+
+</head>
+
+<body style="background: #ABCDEF">
+    <section class='login' id='login'>
+        <div class='head'>
+            <h1 class='company'>Salesperson Commission Management</h1>
+        </div>
+        <p class='msg'>Welcome back</p>
+        <div class='form'>
+            <form #loginform="ngForm" (ngSubmit)="loginUser()">
+                <small class="text-danger">{{msg}}</small>
+                <input type="text" placeholder='Enter Username' class='text' id='userName' [(ngModel)]="salesperson.sname" name="username" required><br>
+                <input type="password" placeholder='Enter Password' class='password' id="password" [(ngModel)]="salesperson.spswrd" name="password"><br>
+                <div class="text-center"><button class="btn btn-danger" type="submit">Login</button></div>
+            </form>
+        </div>
+    </section>
+
+</body>

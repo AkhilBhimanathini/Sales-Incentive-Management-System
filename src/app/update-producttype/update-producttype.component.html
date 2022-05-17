@@ -1,0 +1,81 @@
+<nav class="navbar navbar-default navbar-dark" style="background-color: #e6525d;">
+    <div class="navbar-expand-sm ">
+        <ul class="navbar-nav">
+            <a class="navbar-brand" style="color: #1d3557; font-weight: 650; margin-left: 10px;">Salesperson Commission
+                Management</a>
+            <li class="nav-item">
+                <a routerLink="admin-home" routerLinkActive="active" (click)="salesList()" class="nav-link">Sales
+                    List</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="salespersons" (click)="salespersonsList()" routerLinkActive="active"
+                    class="nav-link">Salesperson List</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="add-sales" (click)="addSales()" routerLinkActive="active" class="nav-link">Add Sales</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="add-salesperson" (click)="addSalesperson()" routerLinkActive="active"
+                    class="nav-link">Add Salesperson</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="commission-structure" (click)="changeCommission()" routerLinkActive="active"
+                    class="nav-link">Change Commission Structure</a>
+            </li>
+        </ul>
+    </div>
+
+    <button class="btn" style="background-color: #187386; color: white; margin-right: 10px;" (click)="onLogout()"
+        routerLink="login" routerLinkActive="active">Logout</button>
+</nav>
+
+
+
+
+
+<div class="col-md-6 offset-md-3" style="margin-top: 2em;">
+    <h3 style="margin-left: 10px; color: white; margin-bottom: 10px;"> </h3>
+    <div class="container" style="background-color: white; border-radius: 10px;">
+        <form (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+                <label> Product Type </label>
+                <input type="number" class="form-control" id="firstName" [(ngModel)]="producttype.ptype" name="firstName">
+            </div>
+
+            <div class="form-group">
+                <label> Lower Limit </label>
+                <input type="number" class="form-control" id="lowerlimit" [(ngModel)]="producttype.lowerlimit" name="lowerlimit">
+            </div>
+
+            <div class="form-group">
+                <label> Lower Commission </label>
+                <input type="number" class="form-control" id="lowercommission" [(ngModel)]="producttype.lowercommission" name="lowercommission">
+            </div>
+
+            <div class="form-group">
+                <label> Upper Limit </label>
+                <input type="number" class="form-control" id="upperlimit" [(ngModel)]="producttype.upperlimit" name="upperlimit">
+            </div>
+
+            <div class="form-group">
+                <label> Upper Commission </label>
+                <input type="number" class="form-control" id="uppercommission" [(ngModel)]="producttype.uppercommission" name="uppercommission">
+            </div>
+
+            <div class="form-group">
+                <label> Intermediate Commission </label>
+                <input type="number" class="form-control" id="intermediatecommission" [(ngModel)]="producttype.intermediatecommission" name="intermediatecommission">
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-success" type="submit" style="margin-top: 10px;">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+

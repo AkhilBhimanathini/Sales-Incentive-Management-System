@@ -1,0 +1,66 @@
+<nav class="navbar navbar-default navbar-dark" style="background-color: #e6525d;">
+    <div class="navbar-expand-sm ">
+        <ul class="navbar-nav">
+            <a class="navbar-brand" style="color: #1d3557; font-weight: 650; margin-left: 10px;">Salesperson Commission
+                Management</a>
+            <li class="nav-item">
+                <a routerLink="admin-home" routerLinkActive="active" (click)="salesList()" class="nav-link">Sales
+                    List</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="salespersons" (click)="salespersonsList()" routerLinkActive="active"
+                    class="nav-link">Salesperson List</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="add-sales" (click)="addSales()" routerLinkActive="active" class="nav-link">Add Sales</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="add-salesperson" (click)="addSalesperson()" routerLinkActive="active"
+                    class="nav-link">Add Salesperson</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="commission-structure" (click)="changeCommission()" routerLinkActive="active"
+                    class="nav-link">Change Commission Structure</a>
+            </li>
+        </ul>
+    </div>
+
+    <button class="btn" style="background-color: #187386; color: white; margin-right: 10px;" (click)="onLogout()"
+        routerLink="login" routerLinkActive="active">Logout</button>
+</nav>
+
+
+
+
+<h2 style="color: white; margin-left: 10px;"></h2>
+<br>
+<div class="container" style="background-color: white; border-radius: 10px;">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th> Product Type </th>
+                <th> Lower Limit </th>
+                <th> Lower Commission </th>
+                <th> Upper Limit </th>
+                <th> Upper Commission </th>
+                <th> Intermediate Commission </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let producttype of producttypes">
+                <td> {{ producttype.ptype }} </td>
+                <td> {{ producttype.lowerlimit }} </td>
+                <td> {{ producttype.lowercommission }} </td>
+                <td> {{ producttype.upperlimit }} </td>
+                <td> {{ producttype.uppercommission }} </td>
+                <td> {{ producttype.intermediatecommission }} </td>
+                <td>
+                    <button (click)="updateProducttype(producttype)" class="btn btn-danger" style="margin-left: 10px; background-color: #187386; border-color: #187386;">
+                        Update
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
